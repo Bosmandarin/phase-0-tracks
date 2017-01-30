@@ -1,5 +1,5 @@
 # Git Definitions
-
+##Made some changes to my project. Hope you like them! :)
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
