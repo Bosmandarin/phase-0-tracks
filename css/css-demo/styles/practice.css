@@ -14,3 +14,8 @@ margin-bottom: 5px;
 .responsibilities{
 	font-size: .8em;
 }
+
+.responsibilities .featured{
+	font-weight:bold; 
+
+}
