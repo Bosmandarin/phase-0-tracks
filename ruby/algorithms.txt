@@ -1,0 +1,75 @@
+1. Algorithm for using an elevator:
+
+Head to elevator
+Look right
+if there is a button
+ press button
+else if look left
+  if there is button
+	press button
+  else leave.
+
+end
+
+after 2 mins 
+ if elevator does not open
+   leave
+ else if elevator doors open
+   get in and turn to face door
+end
+
+(assuming the robot as a floor number in mind to go)
+Desired floor = 16
+
+Look right
+if there are buttons
+ for each button
+	if button is equal to desired floor button
+		press button
+	else look left
+  		if there is button
+			press button
+  		else leave.
+		end
+	end
+end
+
+
+
+2. Algorithm for making a breakfast sandwich:
+
+Head to fridge
+If fridge is closed
+ Open fridge
+else
+ pick eggs
+ pick bagels
+ pick bacon
+ pick cheese
+ pick butter
+end 
+close fridge
+
+head to stove 
+if stove on
+ place pan on stove
+ crack eggs on stove
+ place bacon on stove 
+else
+ turn stove on
+end
+
+Set timer = 3 mins
+while timer is not 3 mins 
+ stir eggs and bacon with spatula
+else 
+ scoop bacon and eggs and place in bagels
+ turn stove off
+ enjoy bagels!
+end
+
+
+
+	
+
+
