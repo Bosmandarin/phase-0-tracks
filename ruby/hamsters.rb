@@ -2,6 +2,7 @@ puts "Please enter the Hamster's name"
 hamster_name = gets.chomp
 puts "Hamster name : #{hamster_name}"
 puts
+
 puts "From 1 - 10, how loud is your hamster?"
 hamster_volume = gets.chomp.to_i
 if hamster_volume > 10 || hamster_volume < 1
@@ -16,6 +17,7 @@ else
   puts "Your hamster is just right!"
 end
 puts
+
 puts "What's your hamsters fur color?"
 hamster_fur = gets.chomp
 puts "Hamster fur color : #{hamster_fur}"
@@ -35,6 +37,10 @@ else
   puts "Invalid response, try again"
 end
 puts
+
 puts "How old is your hamster?"
 hamster_age = gets.chomp.to_i
+if hamster_age == ""
+  hamster_age = nil
+end
 puts "Your hamster is #{hamster_age} years old"
