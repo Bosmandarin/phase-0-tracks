@@ -43,7 +43,6 @@ else
   puts "Sorry, I didnt quite get that, is that Vampiran?"
 end
 puts
-
 puts "Your status is:"
 if age_of_vampire && vampire_eats_garlic && vampire_has_insurance
   puts "Probably not a vampire"
@@ -56,5 +55,29 @@ elsif vampire_name = Drake || vampire_name = Count
 else
   puts "Results Inconclusive"
 end
+
+puts
+
+#puts "Please list any allergies (Type done when you are finished):"
+#allergies = ""
+#until allergies = "sunshine" || allergies = done
+  #allergies = gets.chomp
+  #if allergies = "sunshine"
+    #puts "!!VAMPIRE ALERT!!"
+  #end
+
+#end
+
+puts "Please list any allergies (Type done when you are finished):"
+loop do
+  allergies = gets.chomp
+  if allergies = "sunshine"
+    puts "!!VAMPIRE ALERT!!"
+  end
+  break if allergies = "sunshine" || allergies = "done"
+end
+
 number_of_employees = number_of_employees - 1
 end
+puts
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
