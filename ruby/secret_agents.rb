@@ -15,7 +15,7 @@ end
 puts seq_string
 end
 puts encrypt("boluwatife")
-puts encrypt("abc") 
+puts encrypt("abc")
 puts encrypt("zed")
 
 
@@ -39,13 +39,12 @@ next do the letter.next
 then print the results in a string
 =end
 
-def decrypt(seq_string2)
+def decrypt(seq_string)
   alphabets = "abcdefghijklmnopqrstuvwxyz"
   index = 0
   seq_string3 = ""
-  while index < seq_string2.length
-  puts seq_string2.length.inspect
-    post_desired_letter = alphabets.index(seq_string2[index])
+  while index < seq_string.length
+    post_desired_letter = alphabets.index(seq_string[index])
     desired_letter = post_desired_letter - 1
     seq_string3 = seq_string3 + alphabets[desired_letter]
     index += 1
@@ -57,3 +56,25 @@ end
 puts decrypt("bcd")
 puts decrypt("afe")
 puts decrypt("fag")
+puts decrypt(encrypt("swordfish"))
+
+# This method call should work because as long as the product of the nested call
+#is of a string form, the decrypt method can still work on it. However the argument
+# provided is different in the two methods so they must be the same.
+
+puts "Would you like to decrypt or encrypt a message today?"
+user_response = gets.chomp
+if user_response = "encrypt"
+  puts "Please enter your message for encryption:"
+  seq_string = gets.chomp
+  puts "Your encrypted message is:"
+  puts encrypt(seq_string)
+elsif user_response = "decrypt"
+  puts puts "Please enter your message here for decryption:"
+  seq_string2 = gets.chomp
+  puts "Your decrypted message is:"
+  puts decrypt(seq_string2)
+else
+  puts "Invalid response. Try again"
+  user_response = gets.chomp
+end
