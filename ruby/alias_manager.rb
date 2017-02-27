@@ -13,12 +13,15 @@ Secret.print
 
 #real_name = gets.chomp
 #Method that swaps the first name with the last name
+puts "Please enter your name: "
+real_name = gets.chomp
+#Method that swaps the first name with the last name
 def self.name_swap(real_name)
   rev_real_name = real_name.reverse
 end
 
-Secret.name_swap("Felicia Torres")
-swapped_name = name_swap("Felicia Torres")
+Secret.name_swap(real_name)
+swapped_name = name_swap(real_name)
 p swapped_name
 #p rev_real_name
 
