@@ -28,7 +28,7 @@ end
 
 p fibonacci(22)
 
-##Release 2
+#Release 2
 #Create an array of integers
 #start the loop at index 0
 #for every index, check if the index is greater than or less than
