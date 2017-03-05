@@ -1,55 +1,56 @@
+
+#Release 1
 class Puppy
-
-puts "What did you bring, Buster?"
-
-  def self.fetch(toy)
+  def initialize
+    p "Initializing new puppy instance ..."
+  end
+  def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
   end
-
-  Puppy.fetch("chew_bone")
-puts
-
-puts "What language do you speak?"
-  def self.speak(speech)
-    puts "I am dog, we speak by barking. Woof #{speech}!"
-    speech
-
+  def speak(integer)
+    integer.time do
+      p "Woof!"
+      end
+    end
+  def roll_over
+    p "*rolls over*"
   end
-  Puppy.speak("human")
-puts
-
-puts "What makes you roll over, Buster??"
-  def self.roll_over(treat)
-    puts "When I get #{treat}, I roll over."
-    treat
+  def dog_years(human_years)
+    dog_year= human_years/7
+    dog_year
   end
-
-  Puppy.roll_over("scooby snacks")
-
-puts
-
-puts "How old are you?"
-age = gets.chomp
-puts "You are #{age} years old?"
-  def self.dog_years(age)
-    dog_age = age / 7
-
-    puts "That's #{dog_age} years old in dog years"
-    age
-  end
-
-  Puppy.dog_years(49)
-
-puts
-
-
-  def self.fur_color(color)
-    puts "What color is your fur, Buster??"
-    color = gets.chomp
-    puts "Your fur is #{color}"
-  end
-
-  Puppy.fur_color("brown")
-
 end
+
+#Release 2
+class Gymnast
+  def initialize
+    p "Initializing new puppy instance ..."
+  end
+  def flip
+    p "Do a backflip, then a front flip"
+  end
+  def jump(num)
+    p "jump #{num} times"
+  end
+end
+pug = Puppy.new
+pug.fetch("stick")
+pug.dog_years(28)
+flips=[]
+jumps=[]
+instance=[]
+counter =0
+until counter ==50
+  gym1=Gymnast.new
+  instance.push(gym1)
+  counter +=1
+end
+instance.each do |index|
+  flip1 = index.flip
+  flips.push(flip1)
+  num_jumps= index.jump(rand(10))
+  jumps.push(num_jumps)
+end
+p flips
+p jumps
