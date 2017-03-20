@@ -1,0 +1,76 @@
+
+Command - Display on one table
+SELECT anime_characters.name, anime.name FROM anime_characters JOIN anime ON anime_characters.anime_id = anime.id;
+
+Result 
+Naruto|Naruto
+Quincy|Bleach
+Shikamaru|Naruto
+Mayuri|Bleach
+Kenpachi|Bleach
+
+Command - Update an item according to a condition
+UPDATE anime_characters SET morality = "Neutral" where name= "Quincy";
+
+Result(Before Update)
+Naruto|140|Good|1
+Quincy|80|Evil|2
+Shikamaru|82|Good|1
+Mayuri|90|Neutral|2
+Kenpachi|120|Neutral|2
+
+Rest (After Update)
+Naruto|140|Good|1
+Quincy|80|Neutral|2
+Shikamaru|82|Good|1
+Mayuri|90|Neutral|2
+Kenpachi|120|Neutral|2
+
+Command - Display the information in both tables using one query.
+SELECT * FROM anime_characters, anime WHERE anime_characters.anime_id = anime.id;
+
+Result for anime two tables
+Naruto|140|Good|1|1|Naruto
+Quincy|80|Good|2|2|Bleach
+Shikamaru|82|Good|1|1|Naruto
+Mayuri|90|Neutral|2|2|Bleach
+Kenpachi|120|Neutral|2|2|Bleach
+
+SELECT * FROM heroes, universe WHERE heroes.universe_id = universe.id;
+
+Result for heroes two tables
+Wolverine|150|Neutral|1|1|Marvel
+Batman|75|Good|2|2|DC
+Deadpool|120|Neutral|1|1|Marvel
+Bane|85|Evil|2|2|DC
+
+Command - Display a narrower selection of columns from both tables using one query.
+
+SELECT anime_characters.name, anime.name FROM anime_characters JOIN anime ON anime_characters.anime_id = anime.id;
+
+Naruto|Naruto
+Quincy|Bleach
+Shikamaru|Naruto
+Mayuri|Bleach
+Kenpachi|Bleach
+
+SELECT heroes.name, universe.name FROM heroes JOIN universe ON heroes.universe_id = universe.id;
+
+Wolverine|Marvel
+Batman|DC
+Deadpool|Marvel
+Bane|DC
+
+Command - Delete an item that meets some condition
+DELETE FROM anime_characters WHERE name = “Quincy”;
+
+Result 
+Naruto|140|Good|1
+Shikamaru|82|Good|1
+Mayuri|90|Neutral|2
+Kenpachi|120|Neutral|2
+
+
+
+
+
