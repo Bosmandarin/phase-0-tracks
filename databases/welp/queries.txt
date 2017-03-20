@@ -1,0 +1,22 @@
+
+Name: Tife Odumosu
+
+Command - Join three tables together
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id;
+
+Result
+Merryl|Streepman|The Beagle Nightclub|3|The music was okay:|
+Steven|Wonder|Lotus Yoga|5|Try Maria, she's a perfect Yogi
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|I met my spouse at this chapel
+Halle|Berry|Sushi World|2|Avoid the California roll! Ugh!
+Mandy|Kaling|Plumbing by Janet|4|Janet did my sinks for free
+
+Command - View data on a business from all three tables
+sqlite> SELECT users.first_name, users.last_name, reviews.stars, reviews.comment FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id;
+
+Result
+Merryl|Streepman|3|The music was okay:|
+Steven|Wonder|5|Try Maria, she's a perfect Yogi
+Bradford|Pitt|5|I met my spouse at this chapel
+Halle|Berry|2|Avoid the california roll! Ugh!
+Mandy|Kaling|4|Janet did my sinks for free
