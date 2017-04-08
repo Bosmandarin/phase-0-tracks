@@ -1,6 +1,7 @@
 #practice
 def say_nada
   puts "Nada nada naa-da!"
+  3.times{yield}
 end
 
 say_nada{puts "Say Nada!"}
