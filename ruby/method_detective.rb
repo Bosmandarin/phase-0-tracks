@@ -31,7 +31,7 @@
 "Elementary,    my   dear        Watson!".gsub(/\s+/, " ")
 # => "Elementary, my dear Watson!"
 
-"z".gsub(/./) {|s| s.ord.to_s + ' '} 
+"z".gsub(/./) {|s| s.ord.to_s + ' '}
 # => 122
 # (What is the significance of the number 122 in relation to the character z?)
 
