@@ -52,28 +52,28 @@ decor_theme = gets.chomp
 puts "Would you like to update some information? (yes/no)"
 update = gets.chomp
 
-if update = "yes"
+if update == "yes"
   puts "What would you like to change?"
-  puts "Name"
-  puts "Age"
-  puts "Number of children"
-  puts "Decor_theme"
+  puts "Name, Age, Number of children, Decor_theme"
   user_update = gets.chomp
+else
+  puts "Have a nice day!"
 end
 
-if user_update = "Name"
+if user_update == "Name"
   puts "Name: "
   clients_name = gets.chomp
-elsif user_update = "Age"
+elsif user_update == "Age"
   puts "Age: "
   clients_age = gets.chomp.to_i
-elsif user_update = "Number of children"
+elsif user_update == "Number of children"
   puts "Number of children: "
   clients_children = gets.chomp.to_i
-else user_update = "Decor_theme"
+elsif user_update == "Decor_theme"
   puts "Decor_theme: "
   decor_theme = gets.chomp
-
+else
+  puts "*End of questionnaire*"
 end
 
 
@@ -83,3 +83,5 @@ form = {
   :kids => clients_children,
   :theme => decor_theme
 }
+
+p form
