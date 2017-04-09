@@ -1,3 +1,6 @@
+#Author: Tife Odumosu
+#Unit 5.4: Nested Data Structures
+
 jar_head = {
   home: 'Jar:Head',
 
