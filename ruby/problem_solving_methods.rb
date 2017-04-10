@@ -1,8 +1,10 @@
+#Author: Tife Odumosu
+#Unit 5.6: Solo Challenge
+
+
 #Release 0
-
-array = [22, 21, 13, 1995]
-
-def index_finder(array, x)
+# Searching algortithm
+def search_array(array, x)
  index = 0
  until index == array.length
    if x == array[index]
@@ -12,23 +14,25 @@ def index_finder(array, x)
  end
 end
 
-p index_finder(array, 13)
+array = [10, 23, 42, 81]
+p search_array(array, 42)
+
 
 #Release 1
+#Fibonacci Algorithm
+def fibonacci(int)
+  fib_array = [0, 1]
+  until fib_array.length == int
+  fib_array << fib_array[fib_array.length-1]  + fib_array[fib_array.length-2]
+end
+fib_array
 
-def fibonacci(t)
-fib_array = [0,1]
- index = 2
- until index == t
-    fib_array.push(fib_array[index-1] + fib_array[index-2])
- index += 1
- end
- return fib_array
 end
 
-p fibonacci(22)
+fibonacci(100)
 
 #Release 2
+#Bubble Sort
 #Create an array of integers
 #start the loop at index 0
 #for every index, check if the index is greater than or less than
@@ -55,6 +59,5 @@ def bubble_sort (array_2)
 
     return array_2
 end
-
 
 p bubble_sort (array_2)
