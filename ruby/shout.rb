@@ -1,3 +1,4 @@
+#Author: Tife Odumosu
 #Release 1: For practice
 
 # module Shout
@@ -12,7 +13,7 @@
 #   puts yell_angrily("I want fries")
 # puts yell_happily("I want fries")
 # end
-
+#
 # puts Shout.yell_angrily("I want fries")
 # puts Shout.yell_happily("I want fries")
 
