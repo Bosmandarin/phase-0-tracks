@@ -1,134 +1,154 @@
+#Author: Tife Odumosu
 
 class Santa
-  attr_reader :gender, :ethnicity
+  #Release 3: Refactor
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
-#Method that prints "Initializing Santa instance ...".
-  def initialize (gender, ethnicity) #no self and no driver code in class
-    # @gender = gender
-    # @ethnicity = ethnicity
-    @age = 0
+  def initialize (gender, ethnicity)
+    puts "Initializing Santa instance ..."
+    @gender = gender
+    @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  puts "Initializing new santa instance ..."
-  puts "The #{ethnicity} Santa is #{gender}"
-end
+    @age = 0
+    puts "A #{@gender} santa who is #{@ethnicity} just signed up"
+  end
 
-#Method that will print "Ho, ho, ho! Haaaappy holidays!"
-def speak
-  puts "Ho, ho, ho! Haaaappy holidays!"
-end
+  def speak
+    puts "#{@gender} Santa said, Ho, ho, ho! Haaaappy holidays!"
 
-#Method that takes a cookie type (example: "snickerdoodle")
-#as a parameter and prints "That was a good <type of cookie here>!"
-def eat_milk_and_cookies(cookie)
-  puts "The #{gender} santa said, that was a good #{cookie}!'"
-end
+  end
 
-#Getter methods
-def gender
-  @gender
-end
+  def eat_milk_and_cookies (cookie)
+    puts "That was a good #{cookie}!"
+  end
 
-def ethnicity
-  @ethnicity
-end
+  def celebrate_birthday
+    @age += 1
+    puts "Santa is is now #{@age} years old!"
+  end
 
-def age
-  @age
-end
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking.push(reindeer_name)
+    p @reindeer_ranking
+  end
 
-#Setter methods
-def gender= (new_gender)
-  @gender = new_gender
-end
+  #getter methods
+  # def age
+  #   @age
+  #   p @age
+  # end
 
-def ethnicity= (new_ethnicity)
-  @ethnicity = new_ethnicity
-end
+  # def ethnicity
+  #   @ethnicity
+  #   p @ethnicity
+  # end
 
-def celebrate_birthday
-  new_age = @age + 1
-  @age = new_age
-end
-
-def get_mad_at(reindeer_name)
-  @reindeer_ranking.delete(reindeer_name)
-  @reindeer_ranking.push(reindeer_name)
-  @reindeer_ranking
-end
+  #setter methods
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  #   puts "Santa is now #{new_gender}"
+  # end
 
 end
 
-##Driver code
-santa = Santa.new("agender", "black")
+puts
+puts
+
+
+puts "1"
+santa = Santa.new("male", "rainbow-colored")
 santa.speak
-santa.eat_milk_and_cookies("snickerdoodle")
-santa.gender = "transgender"
-puts
-p santa.celebrate_birthday
-puts
-p santa.get_mad_at("Vixen")
-puts
-puts "The #{santa.gender} is eating a cookie"
+santa.eat_milk_and_cookies("Cookies and Cream")
+santa.gender = "Agender"
+santa.age
+santa.ethnicity
+santa.celebrate_birthday
+santa.get_mad_at("Rudolph")
 
-#One way to fill with instances
+puts
+puts
+
+
+puts "2"
 santas = []
 santas << Santa.new("agender", "black")
-santa.eat_milk_and_cookies("snickerdoodle")
 santas << Santa.new("female", "Latino")
 santas << Santa.new("bigender", "white")
 santas << Santa.new("male", "Japanese")
 santas << Santa.new("female", "prefer not to say")
 santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santas << Santa.new("N/A", "N/A")
-p santas
 
-#Another way to fill with instances
+#or
+puts
+puts
+
+
+puts "3"
 santas = []
-genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+arry_of_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+arry_of_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+arry_of_genders.length.times do |i|
+  santas << Santa.new(arry_of_genders[i], arry_of_ethnicities[i])
+end
+#or
+puts
+puts
+
+
+puts "4"
+arry_of_genders.length.times do |i|
+  santas << Santa.new(arry_of_genders[i], arry_of_ethnicities[i+1])
+end
+puts
+puts
+
+puts "5"
+# Looping through and calling our instance methods on each instantce of Santa
+santas.each do |santy|
+  santy.speak
+end
+puts
+puts
+#Release 4: Make 100 Santas
+class Santacon
+
+#   Use our array of example genders and an array of example ethnicities (and feel free to add to it if you like -- each array could have a lot more options in it!) to create your Santas with a randomly selected gender and a randomly selected ethnicity. (How do you randomly select an array item? The Array documentation should be able to help you out there!)
+# Set your new Santa's age to a random number between 0 and 140.
+# No need to store your Santas in a data structure, but your program should print out the attributes of each Santa using the instance methods that give you access to that data.
+
+  def initialize (gender, ethnicity, age)
+    puts "Initializing Santa instance ..."
+    @gender = gender
+    @ethnicity = ethnicity
+    @age = age
+  end
+
+  def introduce
+  puts "There is a #{@gender} Santa at Santacon who is #{@ethnicity} and is #{@age} years old"
+  end
+
 end
 
 
-
-#Tried and failed code
-=begin
-def build_santas(genders)
+#Driver Code
+puts "1"
+#Create 100 instances of Santa
+santy = Santacon.new("Male", "Sudanese", 70)
 santas = []
-p santas
-p genders
-genders.length.times do |i|
-  santas << Santa.new(genders[i])  }
-  #p genders.length.times
-  #p i
-  #p genders[i]
-  #new_gender = genders[i] + "stereotype"
-  #new_gender
-   #santas << Santa.new(genders[i])
-  # p santas
-  # p genders[i]
-  # p santas
-
-  # puts "There is a Santa who is #{genders[i]}"
-  # puts "-----"
-
-end
+arry_of_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+arry_of_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+100.times do
+  santas << Santacon.new(arry_of_genders.sample, arry_of_ethnicities.sample, rand(140))
 end
 
-build_santas(genders)
+puts
+puts
 
-# def build_santas(genders, ethnicities)
-# santas = {}
-# p santas
-# genders.length.times do |i|
-#   santas << Santa.new(genders[i], ethnicities[i])
-#   p santas
-#   puts "There is a #{ethnicities[i]} Santa who is #{genders[i]}"
-#   puts "-----"
-
-# end
-# end
-
-# build_santas(genders, ethnicities)
-=end
+puts "2"
+# Looping through and calling our instance methods on each instance of Santa
+santas.each do |santy|
+  santy.introduce
+end
