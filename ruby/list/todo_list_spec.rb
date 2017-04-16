@@ -1,3 +1,5 @@
+require_relative 'todo_list'
+
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
@@ -6,6 +8,7 @@ describe TodoList do
   end
 
   it "adds an item to the list" do
+
     list.add_item("mop")
     expect(list.get_items).to eq ["do the dishes", "mow the lawn", "mop"]
   end
