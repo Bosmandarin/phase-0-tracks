@@ -1,11 +1,17 @@
 # Virus Predictor
+# Author: Tife Odumosu
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Marco Marin ].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Allows the program to access external ruby file and import it into the current file.
-# Require_relative looks within the same directory/folder for the file. Require looks in the designated area for modules, etc. for your Ruby implementation.
+# require relative is used to access information from an entire file within the same folder/directory.
+# require is similar to require relative but files do not have to be in the same folder.
+# 'load' can be used to load info into a file.
+# STATE_DATA is considered to be a constant variable. All letters are uppercase.
+# It is accessible using driver code as long as require_relative is there. 
+# to access it within the class scope, it needs to be passed in on initiation
 require_relative 'state_data'
 
 class VirusPredictor
@@ -26,7 +32,8 @@ class VirusPredictor
   # Makes the following code private to this object
   private
 
-  # Categorizes the scale of death based on population density and computes it, and then makes a print statement to display to user.
+  # Categorizes the scale of death based on population density and computes it,
+  # and then makes a print statement to display to user.
   def predicted_deaths()
     # predicted deaths is solely based on population density
 
