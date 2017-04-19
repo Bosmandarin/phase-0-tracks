@@ -1,3 +1,4 @@
+// Author: Tife Odumosu
 //Pseudocode idea 1:
 // Program that takes a string and reverses it
 // Get the string
@@ -13,7 +14,6 @@
 //And loops backwards through that user input string
 //And starts adding the characters from the string to the new empty string
 
-var newString = "";
 
 //Successful attempt!
 var newString = "";
@@ -22,12 +22,10 @@ function reverseMyString(myString){
  for (var i = myString.length - 1; i >= 0; i--) {
         newString = newString + myString[i];
     }
-
   if (2==2){
   console.log(newString);
 }
 return newString;
-
 }
 
 reverseMyString('Boluwatife');
