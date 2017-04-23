@@ -58,8 +58,6 @@ console.log("----");
 
 
 
-
-
 //Driver code
 colors.push("yellow");
 console.log(colors);
