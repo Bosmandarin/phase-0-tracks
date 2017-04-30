@@ -12,8 +12,58 @@ get '/' do
   "#{params[:name]} is #{params[:age]} years old."
 end
 
+# Route parameter
+# get '/about_job/:name' do
+#   name = params[:name]
+#   if name
+#     "Good job, #{name}!"
+#   else
+#     "Good job!"
+#   end
+# end
+
+#Release 0: Q1
+get '/contact' do
+  "Email address: some_email@gmail.com"
+end
+
+#Release 0: Q2
+#Url for query parameter
+##http://localhost:9393/about_job/?name=Tife
+get '/great_job/' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+#Release 0: Q3
+# Url for route parameter to add two numbers
+# http://localhost:9393/add_numbers/8/4
+get '/add_numbers/:number1/:number2' do
+  "#{params[:number1].to_i + params[:number2].to_i}"
+end
+
+get '/students/:name' do
+
+  students.each do |student|
+    if #{params[:name]} ==
+    response << "ID: #{student['id']}<br>"
+    response << "Name: #{student['name']}<br>"
+    response << "Age: #{student['age']}<br>"
+    response << "Campus: #{student['campus']}<br><br>"
+  end
+end
+
 # write a GET route with
 # route parameters
+get '/about/:person' do
+  person = params[:person]
+  "#{person} is a programmer, and #{person} is learning Sinatra."
+end
+
 get '/about/:person' do
   person = params[:person]
   "#{person} is a programmer, and #{person} is learning Sinatra."
