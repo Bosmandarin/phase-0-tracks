@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create form for davidson domains</title>
+</head>
+<body>
+  <form action = "/students" method = "POST">
+    <input  type = "text" name = "studentname" placeholder = "Student name"/>
+    <input  type = "text" name = "websitename" placeholder = "Website name"/>
+    <input  type = "text" name = "Hyperlink" placeholder = "Website URL"/>
+    <input  list = "Category" placeholder = "Categories">
+    <datalist id = "Category">
+      <option value="Arts">
+      <option value="Activism">
+      <option value="Media">
+      <option value="Politics">
+      <option value="Science">
+      <option value="Personal">
+    </datalist>
+    <button type = "submit"> Submit </button>
+  </form>
+</body>
+</html>
