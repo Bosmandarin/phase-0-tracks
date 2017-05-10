@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Davidson Domain Hub</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <h1>Davidson Domain Hub</h1>
+      <p> Click <a href= "/domain/new">here</a> to enter your davidson URL</p>
+      <p><% @domains %></p>
+      <ul>
+        <% @domains.each do |student| %>
+        <li>
+          <%= student['studentname'] %>, <%= student['websitename'] %>, <%= student['Hyperlink'] %>, <%= student['Category'] %>
+        </li>
+        <% end %>
+      </ul>
+  </body>
+</html>
